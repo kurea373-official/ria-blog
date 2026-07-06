@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>RIa Official SIte</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/slide.css">
+<script type="text/javascript" src="js/openclose.js"></script>
+<script type="text/javascript" src="js/fixmenu_pagetop.js"></script>
+</head>
+
+<body>
+
+<header>
+<div class="inner">
+<h1 id="logo"><a href="index.html"><img src="images/logo.png" alt="SAMPLE COMPANY"></a></h1>
+<div id="contact">
+<p class="tel">Welcome To My Site !!<span>稼働時間：24時間　休止時間：サイトメンテナンス日</span></p>
+</div>
+</div>
+</header>
+
+<!--PC用（801px以上端末）メニュー-->
+<nav id="menubar">
+<ul class="inner">
+<li><a href="index.html">ホーム<span>HOME</span></a></li>
+<li class="current"><a href="company.html">サイトについて<span>ABOUT WEBSITE</span></a></li>
+<li><a href="service.html">サービス紹介<span>SERVICE</span></a></li>
+<li><a href="recruit.html">製作者情報<span>DEVELOPER INFORMATION</span></a></li>
+<li><a href="link.html">リンク<span>STAFF</span></a></li>
+<li><a href="contact.html">お問い合わせ<span>CONTACT</span></a></li>
+</ul>
+</nav>
+<!--小さな端末用（800px以下端末）メニュー-->
+<nav id="menubar-s">
+<ul>
+<li><a href="index.html">ホーム<span>HOME</span></a></li>
+<li class="current"><a href="company.html">サイトについて<span>ABOUT WEBSITE</span></a></li>
+<li><a href="service.html">サービス紹介<span>SERVICE</span></a></li>
+<li><a href="recruit.html">製作者情報<span>DEVELOPER INFORMATION</span></a></li>
+<li><a href="link.html">リンク<span>STAFF</span></a></li>
+<li><a href="contact.html">お問い合わせ<span>CONTACT</span></a></li>
+</ul>
+</nav>
+
+<div id="contents" class="inner">
+<div id="contents-in">
+
+<div id="main">
+
+<section>
+
+<h2>確認画面</h2>
+
+<!-- フォームの情報はここからです -->
+<form name="form1" enctype="multipart/form-data" method="post" action="<?php echo $_SERVER["REQUEST_URI"];?>">
+<input type="hidden" name="mode" value="confirm">
+<table class="ta1">
+<!--<tr><td colspan="2" class="auto"><strong>確認画面</strong></td></tr>-->
+<!-- 入力／確認 -->
+<!--<tr><th class="tamidashi" colspan="2">お問い合わせフォーム</th></tr>-->
+<tr>
+<th width="150">お名前<span style="color:red">※</span></th>
+<td>
+<input type="hidden" name="item1" value="<?php echo $form["item1"];?>">
+<?php echo $form["item1"];?>
+</td>
+</tr>
+<tr>
+<th width="150">メールアドレス<span style="color:red">※</span></th>
+<td>
+<input type="hidden" name="item2" value="<?php echo $form["item2"];?>">
+<?php echo $form["item2"];?>
+</td>
+</tr>
+<tr>
+<th>お問い合わせ内容<span style="color:red">※</span></th>
+<td>
+<input type="hidden" name="item3" value="<?php echo $form["item3"]; ?>">
+<?php echo nl2br($form["item3"]);?>
+</td>
+</tr>
+</table>
+<div class="c">
+<input type="submit" value="送信する" class="btn">
+&nbsp;
+<input type="button" value="戻る" onClick="document.form1.mode.value='reinput';document.form1.submit()" class="btn">
+</div>
+</form>
+<!-- フォームの情報はここまでです -->
+
+</section>
+
+</div>
+<!--/#main-->
+
+<div id="sub">
+
+<nav>
+<h2>SERVICE</h2>
+<ul class="submenu">
+<li><a href="#">数当てゲームⅠ</a></li>
+<li><a href="#">数当てゲームⅡ</a></li>
+<li><a href="#">数当てゲームⅢ</a></li>
+<li><a href="#">ブラックジャック</a></li>
+<li><a href="#">マインスイーパー</a></li>
+</ul>
+</nav>
+
+<nav>
+<ul class="submenu">
+<li><a href="#">製作者のプロトタイプ</a></li>
+<li><a href="#">製作者の旧サイト</a></li>
+<li><a href="#">COMING SOON</a></li>
+<li><a href="#">COMING SOON</a></li>
+<li><a href="#">COMING SOON</a></li>
+</ul>
+</nav>
+
+<section>
+
+<h2>おすすめサイト</h2>
+
+<div class="list">
+<a href="service2.html">
+<figure><img src="images/sample1.jpg" alt="写真の説明"></figure>
+<h4>ファイアーフォックス<span class="newicon">NEW</span></h4>
+<p>サンプルテキスト。サンプルテキスト。</p>
+</a>
+</div>
+
+<div class="list">
+<a href="service2.html">
+<figure><img src="images/sample2.jpg" alt="写真の説明"></figure>
+<h4>BING</h4>
+<p>サンプルテキスト。サンプルテキスト。</p>
+</a>
+</div>
+
+
+
+</section>
+
+<div class="box1">
+<h2>準備中</h2>
+<p>コンテンツ募集中<br>
+<br>
+<br>
+</p>
+</div>
+
+</div>
+<!--/#sub-->
+
+</div>
+<!--/#contents-in-->
+
+<div id="side">
+
+<section>
+
+<nav>
+<h2>イベント予定</h2>
+<ul class="submenu">
+<li><a href="#">準備中</a></li>
+<li><a href="#">準備中</a></li>
+</ul>
+</nav>
+
+
+</section>
+
+
+<p>
+<a href="recruit.html"><img src="images/banner1.jpg" alt="ロゴについて" class="pc"></a>
+<a href="recruit.html"><img src="images/banner1_sh.jpg" alt="ロゴについて" class="sh"></a>
+</p>
+<p>製作者の趣味に照らし作りました。テーマカラーは埼京線寄せの青緑です<br>
+<a href="company.html#banner">ロゴ作成は現在しておりません。</a></p>
+
+</div>
+<!--/#side-->
+
+</div>
+<!--/#contents-->
+
+<footer>
+
+<div id="footermenu" class="inner">
+
+</div>
+<!--/footermenu-->
+
+<div id="copyright">
+<small>Copyright&copy; <a href="index.html">KUREA</a> All Rights Reserved.</small>
+<span class="pr"><a href="http://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
+</div>
+
+</footer>
+
+<p class="nav-fix-pos-pagetop"><a href="#">↑</a></p>
+
+<!--小さな端末用（800px以下端末）メニュー-->
+<script type="text/javascript">
+if (OCwindowWidth() <= 800) {
+	open_close("newinfo_hdr", "newinfo");
+}
+</script>
+
+<!--メニュー開閉ボタン-->
+<div id="menubar_hdr" class="close"></div>
+<!--メニューの開閉処理条件設定　800px以下-->
+<script type="text/javascript">
+if (OCwindowWidth() <= 800) {
+	open_close("menubar_hdr", "menubar-s");
+}
+</script>
+
+</body>
+</html>

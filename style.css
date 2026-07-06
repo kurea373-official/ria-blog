@@ -1,0 +1,382 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;800&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ラムネブルーから、贅沢で深い「紅茶＆リンゴ」のアンバーグラデーションへ */
+    --tea-gradient: linear-gradient(135deg, #fbbf24 0%, #d97706 50%, #9d174d 100%);
+    --tea-primary: #d97706;
+    --tea-text: #451a03;
+    --tea-sub: #b45309;
+    
+    /* 紅茶のグラデーションに美しく溶け込むグラスカラー */
+    --glass-body: rgba(255, 251, 243, 0.4);
+    --glass-card: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(217, 119, 6, 0.12);
+    
+    --font-en: 'Plus Jakarta Sans', sans-serif;
+    --font-ja: 'Noto Sans JP', sans-serif;
+    
+    /* 暖色系に合わせた、より柔らかく上品な影 */
+    --premium-shadow: 0 30px 60px rgba(157, 23, 77, 0.04), 0 4px 12px rgba(217, 119, 6, 0.02);
+    --inner-glow: inset 0 1.5px 0px rgba(255, 255, 255, 0.85);
+}
+
+body {
+    /* 高級ホテルのティーラウンジを思わせる、澄んだ琥珀色のグラデーション背景 */
+    background: radial-gradient(circle at 50% 0%, #fffdf9 0%, #fef3c7 60%, #fde68a 100%);
+    color: var(--tea-text);
+    font-family: var(--font-en), var(--font-ja);
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding: 40px 24px 120px 24px;
+    letter-spacing: 0.03em;
+}
+
+/* ティードロップエフェクト（贅沢に香る雫のように静かに上昇） */
+.bubble-ambient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -30px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(251, 191, 36, 0.25) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(217, 119, 6, 0.04);
+    animation: riseUp 10s infinite linear;
+}
+
+@keyframes riseUp {
+    0% { transform: translateY(0) scale(0.4); opacity: 0; }
+    15% { opacity: 0.7; }
+    85% { opacity: 0.3; }
+    100% { transform: translateY(-115vh) scale(1.0); opacity: 0; }
+}
+
+.app-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* ========================================
+   FLOATING GLASS HEADER
+   ======================================== */
+.glass-header {
+    background: var(--glass-body);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--inner-glow), var(--premium-shadow);
+    margin-bottom: 40px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.sig-logo {
+    width: 340px;
+    height: auto;
+}
+
+/* トップナビゲーションの高級化 */
+.top-nav {
+    display: flex;
+    gap: 4px;
+    background: rgba(217, 119, 6, 0.03);
+    padding: 4px;
+    border-radius: 16px;
+    border: 1px solid rgba(217, 119, 6, 0.04);
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: var(--tea-text);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    padding: 10px 20px;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.top-nav a:hover {
+    color: var(--tea-primary);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.top-nav a.active {
+    color: white;
+    background: var(--tea-gradient);
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.2);
+    font-weight: 600;
+}
+
+/* ヘッダークロック */
+.header-clock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#clock-date {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--tea-sub);
+    letter-spacing: 0.1em;
+}
+
+#clock-time {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--tea-text);
+    font-feature-settings: "tnum";
+}
+
+/* ========================================
+   MAIN AREA LAYOUT & MODERN CARD
+   ======================================== */
+.main-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 32px;
+}
+
+.modern-card {
+    background: var(--glass-card);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: var(--inner-glow), var(--premium-shadow);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modern-card:hover {
+    transform: translateY(-4px) scale(1.005);
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(217, 119, 6, 0.25);
+    box-shadow: 0 40px 80px rgba(157, 23, 77, 0.06);
+}
+
+/* カード上部の美しい琥珀グラデーションバー */
+.card-glow-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--tea-gradient);
+}
+
+.stream-banner {
+    margin-bottom: 28px;
+    padding-left: 6px;
+}
+
+.stream-banner h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--tea-text);
+}
+
+.stream-banner p {
+    font-size: 13px;
+    color: var(--tea-sub);
+    margin-top: 4px;
+}
+
+/* タイムライン */
+.posts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.avatar-tea {
+    width: 44px;
+    height: 44px;
+    background: var(--tea-gradient);
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.15);
+}
+
+.meta-info h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--tea-text);
+}
+
+.meta-info span {
+    font-size: 12px;
+    color: var(--tea-sub);
+}
+
+.post-body {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--tea-text);
+    text-align: justify;
+}
+
+/* サイドバー */
+.info-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.side-widget h4 {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--tea-sub);
+    margin-bottom: 18px;
+    border-left: 3px solid var(--tea-primary);
+    padding-left: 8px;
+}
+
+.status-indicator-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+.dot.active { 
+    background-color: var(--tea-primary); 
+    box-shadow: 0 0 12px #d97706, 0 0 4px #d97706; 
+}
+
+.status-text label {
+    display: block;
+    font-size: 9px;
+    color: var(--tea-sub);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.status-text strong {
+    font-size: 13px;
+    color: var(--tea-text);
+    font-weight: 700;
+}
+
+.profile-mini p {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.link-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    background: rgba(217, 119, 6, 0.02);
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(217, 119, 6, 0.04);
+}
+
+.link-label { font-weight: 600; color: var(--tea-sub); }
+.link-val { color: var(--tea-text); font-weight: 700; }
+
+/* ========================================
+   FLOATING MOBILE NAVIGATION
+   ======================================== */
+.floating-mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(157, 23, 77, 0.05);
+    justify-content: space-around;
+    align-items: center;
+    z-index: 9999;
+}
+
+.floating-mobile-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--tea-sub);
+    transition: all 0.3s;
+}
+
+.floating-mobile-nav a span { font-size: 18px; }
+.floating-mobile-nav a label { font-size: 9px; font-weight: 700; margin-top: 2px; }
+
+.floating-mobile-nav a.active {
+    color: var(--tea-text);
+    transform: translateY(-4px);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+    .main-wrapper { grid-template-columns: 1fr; }
+    .info-sidebar { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+}
+
+@media (max-width: 768px) {
+    body { padding: 16px 16px 100px 16px; }
+    .top-nav, .header-clock { display: none; }
+    .glass-header { justify-content: center; padding: 10px; margin-bottom: 24px; }
+    .floating-mobile-nav { display: flex; }
+}

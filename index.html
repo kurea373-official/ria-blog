@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Tea Official — Premium Amber UI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 背景のラグジュアリーティードロップエフェクト -->
+<div class="bubble-ambient" id="bubble-ambient"></div>
+
+<div class="app-container">
+
+    <!-- 多層ガラスのヘッダー -->
+    <header class="glass-header">
+        <div class="logo-area">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 50" class="sig-logo">
+                <defs>
+                    <!-- プレミアム発光フィルター -->
+                    <filter id="premiumGlow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#d97706" flood-opacity="0.25"/>
+                    </filter>
+                    <!-- 紅茶とリンゴを表現するアンバーグラデーション -->
+                    <linearGradient id="appleTeaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#fbbf24" />
+                        <stop offset="60%" stop-color="#d97706" />
+                        <stop offset="100%" stop-color="#9d174d" />
+                    </linearGradient>
+                </defs>
+                
+                <g filter="url(#premiumGlow)" transform="translate(0, 2)">
+                    <!-- 進化したミニマル・アップル＆ティードロップアイコン -->
+                    <circle cx="26" cy="24" r="16" fill="none" stroke="url(#appleTeaGrad)" stroke-width="2.5" stroke-dasharray="75 25"/>
+                    <!-- リンゴの果実と葉の抽象表現 -->
+                    <path d="M26,14 C29,14 33,17 33,22 C33,28 26,33 26,33 C26,33 19,28 19,22 C19,17 23,14 26,14 Z" fill="url(#appleTeaGrad)" fill-opacity="0.2"/>
+                    <circle cx="26" cy="23" r="4" fill="url(#appleTeaGrad)"/>
+                    <path d="M27,13 C29,10 32,10 32,10" fill="none" stroke="url(#appleTeaGrad)" stroke-width="2" stroke-linecap="round"/>
+                    
+                    <!-- 洗練を極めたタイポグラフィ -->
+                    <text x="60" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="300" font-size="24" fill="#9d174d" letter-spacing="1">Apple</text>
+                    <text x="128" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="24" fill="url(#appleTeaGrad)" letter-spacing="1">Tea</text>
+                    
+                    <!-- 右側のミニマルオーナメント -->
+                    <text x="200" y="29" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="8" fill="#d97706" letter-spacing="6">OFFICIAL</text>
+                </g>
+            </svg>
+        </div>
+
+        <!-- 水平プレミアムナビ -->
+        <nav class="top-nav">
+            <a class="active" href="index.html">HOME</a>
+            <a href="company.html">ABOUT</a>
+            <a href="service.html">CONTENT</a>
+            <a href="recruit.html">PROFILE</a>
+            <a href="link.html">OMIKUJI</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+
+        <!-- コンパクト美麗時計 -->
+        <div class="header-clock">
+            <span id="clock-date">-- / -- / --</span>
+            <span id="clock-time">00:00:00</span>
+        </div>
+    </header>
+
+    <!-- メインレイアウト -->
+    <div class="main-wrapper">
+        
+        <!-- 左側：洗練されたストリーム -->
+        <main class="content-stream">
+            <div class="stream-banner">
+                <h2>Developer Logs</h2>
+                <p>最新の開発状況と美的なアップデート</p>
+            </div>
+
+            <div class="posts-grid">
+                <article class="modern-card post">
+                    <div class="card-glow-line"></div>
+                    <div class="post-header">
+                        <div class="avatar-tea">A</div>
+                        <div class="meta-info">
+                            <h3>Apple Tea</h3>
+                            <span>@appletea ・ 2026/07/06</span>
+                        </div>
+                    </div>
+                    <p class="post-body">ブランドアイデンティティを「Apple Tea」へと刷新しました。琥珀色の美しい紅茶の深みと、瑞々しいリンゴの甘酸っぱさを想起させるプレミアム・アンバーテイストなUIデザインをお楽しみください。</p>
+                </article>
+
+                <article class="modern-card post">
+                    <div class="card-glow-line"></div>
+                    <div class="post-header">
+                        <div class="avatar-tea">A</div>
+                        <div class="meta-info">
+                            <h3>Apple Tea</h3>
+                            <span>@appletea ・ 2026/07/05</span>
+                        </div>
+                    </div>
+                    <p class="post-body">コンテンツシステムの再設計に合わせて、カラーパレットの明度と彩度を極限までチューニングしました。夜間に見ても目が疲れにくく、ガラスの質感がより引き立つ上品な仕上がりです。</p>
+                </article>
+
+                <article class="modern-card post">
+                    <div class="card-glow-line"></div>
+                    <div class="post-header">
+                        <div class="avatar-tea">A</div>
+                        <div class="meta-info">
+                            <h3>Apple Tea</h3>
+                            <span>@appletea ・ 2026/07/04</span>
+                        </div>
+                    </div>
+                    <p class="post-body">不要な古いコードを完全にクリーンアップしました。これにより、無駄なデータ読み込みを一切排除したシームレスで軽快なサイト体験を実現しています。</p>
+                </article>
+            </div>
+        </main>
+
+        <!-- 右側：インフォメーションボード -->
+        <aside class="info-sidebar">
+            <div class="modern-card side-widget">
+                <h4>SYSTEM MONITOR</h4>
+                <div class="status-indicator-group">
+                    <div class="status-item">
+                        <span class="dot active"></span>
+                        <div class="status-text">
+                            <label>SYSTEM STATUS</label>
+                            <strong>100% OPERATIONAL</strong>
+                        </div>
+                    </div>
+                    <div class="status-item">
+                        <span class="dot active"></span>
+                        <div class="status-text">
+                            <label>VISUAL THEME</label>
+                            <strong>Premium Amber Apple Tea</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modern-card side-widget profile-mini">
+                <h4>BIOGRAPHY</h4>
+                <p>ミニマリズムと洗練されたコードを愛するクリエイター。心地よい豊かな時間を提供する、気品あるデジタル表現を追求しています。</p>
+            </div>
+
+            <div class="modern-card side-widget contact-mini">
+                <h4>CONNECT</h4>
+                <div class="link-row">
+                    <span class="link-label">Discord</span>
+                    <span class="link-val">@appletea_root</span>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+</div>
+
+<!-- モバイルナビ -->
+<nav class="floating-mobile-nav">
+    <a class="active" href="index.html"><span>🏠</span><label>Home</label></a>
+    <a href="service.html"><span>💻</span><label>Service</label></a>
+    <a href="recruit.html"><span>👤</span><label>Profile</label></a>
+    <a href="link.html"><span>🎲</span><label>Omikuji</label></a>
+    <a href="contact.html"><span>✉</span><label>Contact</label></a>
+</nav>
+
+<script src="js/script.js"></script>
+</body>
+</html>
