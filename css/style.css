@@ -11,43 +11,32 @@
 
     /* White Tea Theme */
 
-    --tea-gradient:
-    linear-gradient(
-        135deg,
-        #ffffff 0%,
-        #f5f7f2 35%,
-        #e3ebe0 70%,
-        #cfdcc9 100%
-    );
+   --tea-gradient:
+linear-gradient(
+135deg,
+#bfece8 0%,
+#8fdcea 45%,
+#7fd7dc 100%);
 
-    --tea-primary:#b8c8b1;
+--tea-primary:#72cad8;
 
-    --tea-primary-dark:#8fa38a;
+--tea-text:#44626b;
 
-    --tea-text:#50554d;
+--tea-sub:#7b99a1;
 
-    --tea-sub:#878d84;
+--glass-body:
+rgba(250,255,255,.42);
 
-    --glass-body:
-        rgba(255,255,255,.42);
+--glass-card:
+rgba(255,255,255,.72);
 
-    --glass-card:
-        rgba(255,255,255,.72);
+--glass-border:
+rgba(180,225,231,.25);
 
-    --glass-border:
-        rgba(205,214,198,.55);
-
-    --font-en:'Plus Jakarta Sans',sans-serif;
-
-    --font-ja:'Noto Sans JP',sans-serif;
-
-    --premium-shadow:
-        0 24px 60px rgba(95,110,90,.08),
-        0 6px 18px rgba(95,110,90,.04);
-
-    --inner-glow:
-        inset 0 1px 0 rgba(255,255,255,.92);
-
+--premium-shadow:
+0 30px 60px rgba(90,170,185,.08),
+0 6px 20px rgba(120,190,205,.05);
+   
 }
 
 /* ========================================
@@ -58,42 +47,33 @@ White Tea Premium
 
 body{
 
-    background:
+background:
 
-    radial-gradient(
-        circle at 0% 0%,
-        rgba(255,255,255,.96) 0%,
-        rgba(247,249,244,.92) 35%,
-        transparent 65%
-    ),
+radial-gradient(
+circle at top,
+#ffffff 0%,
+#f5ffff 35%,
+transparent 60%
+),
 
-    radial-gradient(
-        circle at 100% 0%,
-        rgba(236,241,233,.75) 0%,
-        transparent 45%
-    ),
+radial-gradient(
+circle at right,
+#dff8f7 0%,
+transparent 45%
+),
 
-    radial-gradient(
-        circle at 100% 100%,
-        rgba(229,236,225,.85) 0%,
-        transparent 50%
-    ),
+linear-gradient(
+180deg,
 
-    radial-gradient(
-        circle at 0% 100%,
-        rgba(248,249,246,.92) 0%,
-        transparent 45%
-    ),
+#fbffff,
 
-    linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #fbfbf8 18%,
-        #f5f7f2 42%,
-        #eef3eb 72%,
-        #e5ece2 100%
-    );
+#eefcfd,
 
+#e6f9f8,
+
+#f8ffff
+
+);
     color:var(--tea-text);
 
     font-family:var(--font-en),var(--font-ja);
