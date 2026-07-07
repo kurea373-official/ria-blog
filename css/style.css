@@ -8,28 +8,32 @@
 }
 
 :root {
-    /* ラムネブルーから、贅沢で深い「紅茶＆リンゴ」のアンバーグラデーションへ */
-    --tea-gradient: linear-gradient(135deg, #fbbf24 0%, #d97706 50%, #9d174d 100%);
-    --tea-primary: #d97706;
-    --tea-text: #451a03;
-    --tea-sub: #b45309;
+    /* ── あの卒業記念「青色銀テープ」の眩しい輝きを再現したメタリックグラデーション ── */
+    --tea-gradient: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 20%, #0284c7 40%, #0369a1 55%, #0c4a6e 70%, #38bdf8 85%, #e0f2fe 100%);
+    /* 特典の箔押し感を強調する高輝度ネオンブルー */
+    --tea-primary: #00d2ff;
+    /* メタルプレートに深く刻まれた文字をイメージしたシャープな紺黒 */
+    --tea-text: #0b1329;
+    --tea-sub: #0284c7;
     
-    /* 紅茶のグラデーションに美しく溶け込むグラスカラー */
-    --glass-body: rgba(255, 251, 243, 0.4);
-    --glass-card: rgba(255, 255, 255, 0.6);
-    --glass-border: rgba(217, 119, 6, 0.12);
+    /* ミントベースの水色を極薄のグラスレイヤーとしてブレンド */
+    --glass-body: rgba(224, 242, 254, 0.4);
+    --glass-card: rgba(255, 255, 255, 0.75);
+    /* 枠線を銀テープの鋭いエッジのようにクリアに */
+    --glass-border: rgba(56, 189, 248, 0.25);
     
     --font-en: 'Plus Jakarta Sans', sans-serif;
     --font-ja: 'Noto Sans JP', sans-serif;
     
-    /* 暖色系に合わせた、より柔らかく上品な影 */
-    --premium-shadow: 0 30px 60px rgba(157, 23, 77, 0.04), 0 4px 12px rgba(217, 119, 6, 0.02);
-    --inner-glow: inset 0 1.5px 0px rgba(255, 255, 255, 0.85);
+    /* 青色リフレクションに合わせた、引き締まったプレミアムシャドウ */
+    --premium-shadow: 0 30px 60px rgba(2, 132, 199, 0.05), 0 4px 12px rgba(56, 189, 248, 0.02);
+    /* 箔押しの立体感（エンボス）を演出する内側のハイライト */
+    --inner-glow: inset 0 2px 0px rgba(255, 255, 255, 0.95), inset 0 -1px 0px rgba(2, 132, 199, 0.1);
 }
 
 body {
-    /* 高級ホテルのティーラウンジを思わせる、澄んだ琥珀色のグラデーション背景 */
-    background: radial-gradient(circle at 50% 0%, #fffdf9 0%, #fef3c7 60%, #fde68a 100%);
+    /* 銀テープが舞うステージの光をイメージした、透明感あるミント＆アクアの背景 */
+    background: radial-gradient(circle at 50% 0%, #f0fdfa 0%, #e0f2fe 50%, #bae6fd 100%);
     color: var(--tea-text);
     font-family: var(--font-en), var(--font-ja);
     min-height: 100vh;
@@ -38,7 +42,7 @@ body {
     letter-spacing: 0.03em;
 }
 
-/* ティードロップエフェクト（贅沢に香る雫のように静かに上昇） */
+/* ライブ会場で舞い踊る銀テープのきらめきをイメージしたバブル（リフレクション） */
 .bubble-ambient {
     position: fixed;
     top: 0;
@@ -52,18 +56,19 @@ body {
 .bubble {
     position: absolute;
     bottom: -30px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(251, 191, 36, 0.25) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* 銀テの裏面（シルバー）や表面の反射が混ざり合うような美麗グラデーション */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(56, 189, 248, 0.3) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(217, 119, 6, 0.04);
-    animation: riseUp 10s infinite linear;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.06);
+    animation: riseUp 11s infinite linear;
 }
 
 @keyframes riseUp {
-    0% { transform: translateY(0) scale(0.4); opacity: 0; }
+    0% { transform: translateY(0) scale(0.3) rotate(0deg); opacity: 0; }
     15% { opacity: 0.7; }
-    85% { opacity: 0.3; }
-    100% { transform: translateY(-115vh) scale(1.0); opacity: 0; }
+    85% { opacity: 0.4; }
+    100% { transform: translateY(-115vh) scale(0.9) rotate(360deg); opacity: 0; }
 }
 
 .app-container {
@@ -90,30 +95,45 @@ body {
     margin-bottom: 40px;
 }
 
+/* ── ロゴエリアの青色銀テ・メタリック化 ── */
 .logo-area {
     display: flex;
     align-items: center;
 }
 
+/* ロゴ画像に「青色箔押し」のシャープな輝きと、シアン〜ブルーの偏光フィルターを適用 */
 .sig-logo {
     width: 340px;
     height: auto;
+    filter: drop-shadow(0 2px 4px rgba(2, 132, 199, 0.15)) saturate(1.8) hue-rotate(195deg) brightness(1.1);
+    transition: all 0.3s ease;
+}
+.sig-logo:hover {
+    filter: drop-shadow(0 0 12px rgba(0, 210, 255, 0.7)) brightness(1.3) saturate(2);
 }
 
-/* トップナビゲーションの高級化 */
+/* テキストロゴだった場合のメタリック反射 */
+.logo-area text, .logo-area h1 {
+    background: var(--tea-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 1px rgba(255,255,255,0.8));
+}
+
+/* トップナビゲーション */
 .top-nav {
     display: flex;
     gap: 4px;
-    background: rgba(217, 119, 6, 0.03);
+    background: rgba(56, 189, 248, 0.08);
     padding: 4px;
     border-radius: 16px;
-    border: 1px solid rgba(217, 119, 6, 0.04);
+    border: 1px solid rgba(56, 189, 248, 0.12);
 }
 
 .top-nav a {
     text-decoration: none;
     color: var(--tea-text);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 13px;
     letter-spacing: 0.05em;
     padding: 10px 20px;
@@ -126,11 +146,13 @@ body {
     background: rgba(255, 255, 255, 0.6);
 }
 
+/* アクティブタブ：鮮やかな青色銀テープの質感をそのまま流し込んだデザイン */
 .top-nav a.active {
-    color: white;
+    color: #ffffff;
     background: var(--tea-gradient);
-    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.2);
-    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35), var(--inner-glow);
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* ヘッダークロック */
@@ -142,7 +164,7 @@ body {
 
 #clock-date {
     font-size: 10px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--tea-sub);
     letter-spacing: 0.1em;
 }
@@ -178,12 +200,12 @@ body {
 
 .modern-card:hover {
     transform: translateY(-4px) scale(1.005);
-    background: rgba(255, 255, 255, 0.8);
-    border-color: rgba(217, 119, 6, 0.25);
-    box-shadow: 0 40px 80px rgba(157, 23, 77, 0.06);
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(56, 189, 248, 0.4);
+    box-shadow: 0 40px 80px rgba(2, 132, 199, 0.1);
 }
 
-/* カード上部の美しい琥珀グラデーションバー */
+/* カード上部の青色箔押しライン */
 .card-glow-line {
     position: absolute;
     top: 0;
@@ -224,18 +246,20 @@ body {
     margin-bottom: 16px;
 }
 
+/* アバターを丸まった銀テープの光沢バッジ風に */
 .avatar-tea {
     width: 44px;
     height: 44px;
     background: var(--tea-gradient);
-    color: white;
+    color: #ffffff;
     font-weight: 800;
     font-size: 16px;
     border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.15);
+    box-shadow: 0 4px 10px rgba(2, 132, 199, 0.2), var(--inner-glow);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .meta-info h3 {
@@ -269,7 +293,7 @@ body {
     letter-spacing: 0.15em;
     color: var(--tea-sub);
     margin-bottom: 18px;
-    border-left: 3px solid var(--tea-primary);
+    border-left: 3px solid var(--tea-sub);
     padding-left: 8px;
 }
 
@@ -285,6 +309,7 @@ body {
     gap: 14px;
 }
 
+/* オンラインインジケーターを最高輝度のシアンブルーネオンに */
 .dot {
     width: 7px;
     height: 7px;
@@ -293,7 +318,7 @@ body {
 
 .dot.active { 
     background-color: var(--tea-primary); 
-    box-shadow: 0 0 12px #d97706, 0 0 4px #d97706; 
+    box-shadow: 0 0 14px #00d2ff, 0 0 4px #00d2ff; 
 }
 
 .status-text label {
@@ -319,10 +344,10 @@ body {
     display: flex;
     justify-content: space-between;
     font-size: 13px;
-    background: rgba(217, 119, 6, 0.02);
+    background: rgba(56, 189, 248, 0.04);
     padding: 10px 14px;
     border-radius: 12px;
-    border: 1px solid rgba(217, 119, 6, 0.04);
+    border: 1px solid rgba(56, 189, 248, 0.08);
 }
 
 .link-label { font-weight: 600; color: var(--tea-sub); }
@@ -338,12 +363,12 @@ body {
     left: 24px;
     right: 24px;
     height: 64px;
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(157, 23, 77, 0.05);
+    box-shadow: 0 20px 40px rgba(2, 132, 199, 0.08);
     justify-content: space-around;
     align-items: center;
     z-index: 9999;
@@ -362,7 +387,7 @@ body {
 .floating-mobile-nav a label { font-size: 9px; font-weight: 700; margin-top: 2px; }
 
 .floating-mobile-nav a.active {
-    color: var(--tea-text);
+    color: var(--tea-primary);
     transform: translateY(-4px);
 }
 
@@ -379,3 +404,4 @@ body {
     .top-nav, .header-clock { display: none; }
     .glass-header { justify-content: center; padding: 10px; margin-bottom: 24px; }
     .floating-mobile-nav { display: flex; }
+}
